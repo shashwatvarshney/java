@@ -1,0 +1,25 @@
+package sample3;
+
+import java.util.*;
+
+public class MissedCallDetails {
+    Calendar CalObj;
+    Long tel_num;
+    String name;
+    MissedCallDetails(Calendar cob, Long tn, String n)
+    {
+        CalObj=cob;
+        tel_num=tn;
+        name=n;        
+    }
+    void display()
+    {
+        CalObj.add(Calendar.DATE,1);
+        //SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+        System.out.println("Current time is"+CalObj.getTime());
+        System.out.println("Telephone is:"+tel_num);
+        System.out.println("Name is:"+name);
+    }
+    
+
+}

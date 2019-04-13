@@ -1,0 +1,54 @@
+import java.util.*;
+public class Book implements Comparable<Book>{
+	String tit,author,pub;
+	Double price;
+	Book(String t,String a,String pu,Double p)
+	{
+		tit=t;
+		author=a;
+		pub=pu;
+		price=p;
+	}
+	public int compareTo(Book o)
+	{
+		return price.compareTo(o.price);
+	}
+	public String toString()
+	{
+		return "TITLE: "+tit+" AUTHOR: "+author+" PUBLISHER: "+pub+" PRICE: "+price;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s=new Scanner(System.in);
+		ArrayList<Book> b=new ArrayList<Book>();
+		System.out.println("Enter no of books: ");
+		int n=s.nextInt();
+		for(int i=0;i<n;i++)
+		{
+			System.out.println("Enter title: ");
+			String t=s.next();
+			System.out.println("Enter author: ");
+			String a=s.next();
+			System.out.println("Enter publ: ");
+			String p=s.next();
+			System.out.println("Enter price: ");
+			Double pr=s.nextDouble();
+			Book book=new Book(t,a,p,pr);
+			b.add(book);
+	
+		}
+		System.out.println("List before sorting");
+		Iterator i= b.iterator();
+		while(i.hasNext())
+			System.out.println(i.next());
+		Collections.sort(b);
+		ArrayList<Book> bsort=new ArrayList<Book>();
+		bsort.addAll(b);
+		System.out.println("Sorted list acc to price");
+		Iterator it= bsort.iterator();
+		while(it.hasNext())
+			System.out.println(it.next());
+
+	}
+
+}

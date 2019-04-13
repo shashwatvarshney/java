@@ -1,0 +1,35 @@
+package sample3;
+
+import java.util.*;
+import java.util.Map.Entry;
+
+public class DataBaseCallers {
+    public static HashMap<Long,String> hm;
+    public static Scanner sc = new Scanner(System.in);
+    static void CreateEntries(int n)
+    {
+        hm=new HashMap<Long,String>();
+        for(int i=0;i<n;i++)
+        {
+            System.out.println("Enter the phone number and contact name");
+            Long phno=sc.nextLong();
+            String name=sc.next();
+            hm.put(phno,name);
+        }
+    }
+    public static void ForHoldingData()
+    {
+        System.out.println("Enter details:");
+        int n = sc.nextInt();
+        CreateEntries(n);
+    }
+    public static void display()
+    {
+        Set<Entry<Long,String>> hashSet = hm.entrySet();
+        for(Entry<Long,String> entry:hashSet)
+        {
+            System.out.println("Key="+entry.getKey()+ ", Value"+entry.getValue());
+        }
+    }
+
+}
